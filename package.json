@@ -21,7 +21,7 @@
     "eslint-config-oclif": "^3.1",
     "eslint-config-oclif-typescript": "^0.1",
     "ts-node": "^8",
-    "typescript": "^3.3"
+    "typescript": "^5.4.3"
   },
   "engines": {
     "node": ">=10.1.0"
@@ -35,7 +35,7 @@
     "oclif"
   ],
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/v3/index.js",
   "oclif": {
     "bin": "google-photos-exif"
   },
