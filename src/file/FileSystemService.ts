@@ -24,11 +24,7 @@ export class FileSystemService {
     return extname(path)
   }
 
-  listFilesRecursively(directoryPath: string, options: { includeExtensions: string[] }): Promise<string[]> {
-    throw new Error("Method not implemented.");
-  }
-
-  async * listFilesRecursivelyWithGenerator(
+  async * listFilesRecursively(
     directoryPath: string,
     options: { includeExtensions: string[] }
   ): AsyncGenerator<string> {
@@ -42,7 +38,7 @@ export class FileSystemService {
         .includes(extension)
         
       if (entry.isDirectory())
-          yield * this.listFilesRecursivelyWithGenerator(path, options);
+          yield * this.listFilesRecursively(path, options);
       else if (isInclude)
         yield path;
     }

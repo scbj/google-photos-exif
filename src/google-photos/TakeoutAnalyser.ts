@@ -16,7 +16,7 @@ export class TakeoutAnalyser {
   async listMedias() {
     this.logger.info('🔍 Scanning the Google Photos Takeout directory...')
     
-    const mediaFilePaths = this.fileSystemService.listFilesRecursivelyWithGenerator(
+    const mediaFilePaths = this.fileSystemService.listFilesRecursively(
       this.configuration.inputDirectory,
       {
         includeExtensions: this.configuration.supportedMediaFileExtensions

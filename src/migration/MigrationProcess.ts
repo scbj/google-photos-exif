@@ -44,7 +44,7 @@ export class MigrationProcess {
     )
     await this.fileSystemService.writeFile(errorFilePath, errorFileContent)
 
-    console.log(`\n🤚 Migration stops. Error logs have been saved in ${errorFilePath} (error count: ${errors.length})\n`)
+    this.logger.info(`\n🤚 Migration stops. Error logs have been saved in "${errorFilePath}" (error count: ${errors.length})\n`)
   }
 
   private async prepareOutput() {
